@@ -5,19 +5,26 @@ const expenseSchema = new mongoose.Schema({
         type: String,
         unique: true
     },
-    product:{
+    product: {
         type: String,
     },
-    amount:{
-        type:Number
+    amount: {
+        type: Number
     },
-    mode:{
-        type:Boolean
+    mode: {
+        type: Boolean
     },
     createdAt: {
         type: Date,
         default: Date.now
     }
 });
+
+
+expenseSchema.pre("save", async function (next) {
+    this.amount
+    next()
+})
+
 
 const Expense = mongoose.model('Expense', expenseSchema);
