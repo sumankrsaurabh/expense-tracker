@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from "mongoose";
 
 const expenseSchema = new mongoose.Schema({
     id: {
@@ -27,4 +27,4 @@ expenseSchema.pre("save", async function (next) {
 })
 
 
-const Expense = mongoose.model('Expense', expenseSchema);
+export const Expense = mongoose.model('Expense', expenseSchema);

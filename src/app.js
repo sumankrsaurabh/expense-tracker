@@ -17,9 +17,13 @@ app.use(cookieParser())
 
 //routes import
 import userRouter from "./routers/user.routes.js"
+import incomeRouter from "./routers/income.routes.js"
+import expenseRouter from "./routers/expenses.routes.js"
 
 //routes declaration
 app.use("/api/v1/users",userRouter)
+app.use("/api/v1/income",incomeRouter)
+app.use("/api/v1/expense",expenseRouter)
 
 // http://localhost:8000/api/v1/users/register
 
